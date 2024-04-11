@@ -7,7 +7,7 @@ test.beforeEach(async({page}) => {
     await page.goto('/')
 })
 
-test('navigate to form page', async ({ page }) => { 
+test('navigate to form page @smoke', async ({ page }) => {              //run tag @smoke - npx playwright test --project=chromium --grep @smoke
     const pm = new PageManager(page)
     await pm.navigateTo().formLayoutsPage()
     await pm.navigateTo().datepickerPage()
@@ -28,6 +28,6 @@ test('parametrized methods', async ({ page }) => {
     // await page.locator('nb-Card', { hasText: "Inline form" }).screenshot({path: 'screenshots/inlineForm.png'})
     await pm.navigateTo().datepickerPage()
     await pm.onDatePickerPage().selectCommonDatePickerDateFromToday(10)
-    await pm.onDatePickerPage().selectDatePickerWithRangeFromToday(7, 9)
+    await pm.onDatePickerPage().selectDatePickerWithRangeFromToday(4, 5)
 })
 

@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="16.263023">
+<testsuite name="tests/firstTest.spec.ts" timestamp="2024-03-20T15:12:32.778Z" hostname="chromium" tests="7" failures="0" skipped="0" time="15.793" errors="0">
+<testcase name="Locator syntax rules" classname="tests/firstTest.spec.ts" time="2.07">
+</testcase>
+<testcase name="User facing locators" classname="tests/firstTest.spec.ts" time="2.453">
+</testcase>
+<testcase name="locating child elements" classname="tests/firstTest.spec.ts" time="2.475">
+</testcase>
+<testcase name="locating parent elements" classname="tests/firstTest.spec.ts" time="2.262">
+</testcase>
+<testcase name="Reusing the Locators" classname="tests/firstTest.spec.ts" time="2.577">
+</testcase>
+<testcase name="extracting value" classname="tests/firstTest.spec.ts" time="1.987">
+</testcase>
+<testcase name="Assertions" classname="tests/firstTest.spec.ts" time="1.969">
+</testcase>
+</testsuite>
+</testsuites>

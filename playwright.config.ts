@@ -1,36 +1,34 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { TestOptions } from './test-options';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
+
 require('dotenv').config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig<TestOptions>({
-  // timeout: 10000,
-  testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  // timeout: 40000,
+  // globalTimeout: 60000,
+
+  expect: {
+    timeout: 2000,
+    toMatchSnapshot: {maxDiffPixels: 50}
+  },
+  retries: 1,
+  reporter: [
+    ['html'],
+    // ['json', { outputFile: 'test-result/jsonReport.json' }],
+    // ['junit', {outputFile: 'test-result/jsonReport.xml'}]
+    ],   //list
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:4200/',
+    // baseURL: 'http://localhost:4200/',
     globalsQaURL: 'https://www.globalsqa.com/demo-site/draganddrop/',
-    // baseURL: process.env.DEV === '1' ? 'http://localhost:DevEnv/'
-    //   : process.env.STAGE == '1' ? 'http://localhost:StageEnv/'
-    //   : 'http://localhost:QualEnv/',
+    baseURL: process.env.DEV === '1' ? 'http://localhost:DevEnv/'               //DEV=1 npx playwright test autoWaiting.spec.ts --project=chromium
+      : process.env.STAGE == '1' ? 'http://localhost:StageEnv/'
+      : 'http://localhost:4200/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -57,23 +55,35 @@ export default defineConfig<TestOptions>({
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        browserName: 'firefox'
+      },
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    {
+      name: 'pageObjectsFullScreen',                               // npx playwright test --project=pageObjectsFullScreen
+      testMatch: 'usePageObjects.spec.ts',
+      use: { 
+        viewport: { width: 1920, height: 1080 },
+        browserName: 'firefox'
+       },
+    },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+      testMatch: 'testMobole.spec.ts'
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 13'] },
+      testMatch: 'testMobole.spec.ts'
+    },
 
     /* Test against branded browsers. */
     // {

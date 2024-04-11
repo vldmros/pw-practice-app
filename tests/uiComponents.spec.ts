@@ -5,8 +5,8 @@ test.beforeEach(async({page}) => {
 
 })
 
-test.describe('Form Layouts page', () => {
-    test.describe.configure({retries: 2})          //Retry is the mechanism in the playwright that can retry a failed test. 2 times
+test.describe('Form Layouts page @block', () => {
+    test.describe.configure({retries: 0})          //Retry is the mechanism in the playwright that can retry a failed test. 2 times
     test.beforeEach(async ({ page }) => { 
         await page.getByText('Forms').click()
         await page.getByText('Form Layouts').click()
@@ -29,6 +29,7 @@ test.describe('Form Layouts page', () => {
     })
 
     test('radio buttons', async ({ page }) => { 
+        
         const usingTheGridForm = page.locator('nb-Card', { hasText: "Using the Grid" })
         
         // await usingTheGridForm.getByLabel('Option 1').check({ force: true })
@@ -37,7 +38,8 @@ test.describe('Form Layouts page', () => {
 
         await usingTheGridForm.getByRole('radio', { name: "Option 1" }).check({ force: true })   //
         const radioStatus = await usingTheGridForm.getByRole('radio', { name: "Option 1" }).isChecked()
-        // expect(radioStatus).toBeTruthy()
+        // await expect(usingTheGridForm).toHaveScreenshot({ maxDiffPixels: 100})       //check for screenshot
+        expect(radioStatus).toBeTruthy()
         // for generic assertion Using method is checked, you can get the status of the web element and then you can make validation of the status.
         await expect(usingTheGridForm.getByRole('radio', { name: "Option 1" })).toBeChecked()
 
@@ -45,8 +47,6 @@ test.describe('Form Layouts page', () => {
         // Or if you use locator assertion, you can use method to be checked
         expect(await usingTheGridForm.getByRole('radio', { name: "Option 1" }).isChecked()).toBeFalsy()
         expect(await usingTheGridForm.getByRole('radio', { name: "Option 2" }).isChecked()).toBeTruthy()
-
-
 
     })
 })

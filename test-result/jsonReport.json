@@ -1,0 +1,365 @@
+{
+  "config": {
+    "configFile": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/playwright.config.ts",
+    "rootDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-result/jsonReport.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-result/jsonReport.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "pageObjectsFullScreen",
+        "name": "pageObjectsFullScreen",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "usePageObjects.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "testMobole.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/home/voosy/Pro/PlayWright_udemy/pw-practice-app",
+        "testIgnore": [],
+        "testMatch": [
+          "testMobole.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.41.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/firstTest.spec.ts",
+      "file": "tests/firstTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Locator syntax rules",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2070,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:33.076Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-f74e3ef115bc2a6f5968",
+          "file": "tests/firstTest.spec.ts",
+          "line": 9,
+          "column": 5
+        },
+        {
+          "title": "User facing locators",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2453,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:35.273Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-06cb21b5c6510fc41f01",
+          "file": "tests/firstTest.spec.ts",
+          "line": 38,
+          "column": 5
+        },
+        {
+          "title": "locating child elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2475,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:37.728Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-aeb451036bdbb219e6bc",
+          "file": "tests/firstTest.spec.ts",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "title": "locating parent elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:40.205Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-5ddefa3377328e9bfae4",
+          "file": "tests/firstTest.spec.ts",
+          "line": 63,
+          "column": 5
+        },
+        {
+          "title": "Reusing the Locators",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2577,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:42.468Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-10affbc63a7e66eb7c0a",
+          "file": "tests/firstTest.spec.ts",
+          "line": 77,
+          "column": 5
+        },
+        {
+          "title": "extracting value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1987,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:45.046Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-48d7ac3f4cbe83de894b",
+          "file": "tests/firstTest.spec.ts",
+          "line": 93,
+          "column": 5
+        },
+        {
+          "title": "Assertions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-03-20T15:12:47.034Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ef415c3aec3d48fa3b98-036d78cc363546cce395",
+          "file": "tests/firstTest.spec.ts",
+          "line": 115,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-03-20T15:12:32.615Z",
+    "duration": 16421.902,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
